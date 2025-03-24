@@ -158,85 +158,34 @@
 <p><em>Модель прецедентів повинна містити загальні оглядові діаграми та специфікації прецедентів.</em></p>
 <p>Вбудовування зображень діаграм здійснюється з використанням сервісу <a href="https://plantuml.com/">plantuml.com</a>.</p>
 <p>В markdown-файлі використовується опис діаграми</p>
-<pre><code class="language-md">
-&lt;center style="
-    border-radius:4px;
-    border: 1px solid #cfd7e6;
-    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
-    padding: 1em;"
-&gt;
-
-@startuml
-actor Guest
-  actor User
-  actor Manager
-  
-  usecase Registration
-  usecase "Activate(reactivate) Profile" as AP
-  usecase Login
-  
-  usecase "Profile \nManagement" as PM
-  usecase "Create \nEntry Point" as CEP
-  usecase "Entry Point \nManagement" as EPM
-  usecase "Restore \nPassword" as RP
-  
-  
-  User -u-|&gt; Guest
-  Manager -u-|&gt; User
-  
-  Guest -&gt; Registration
-  
-  User -u-&gt; Login
-  User -l-&gt; PM
-  User -&gt; CEP
-  User --&gt; AP
-  User --&gt; RP
-  
-  Manager -&gt; EPM
-@enduml
-
-**Діаграма прецедентів**
-
-&lt;/center&gt;
-</code></pre>
-<p>яка буде відображена наступним чином</p>
-<center style="
-    border-radius:4px;
-    border: 1px solid #cfd7e6;
-    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
-    padding: 1em;"
-    >
 <pre><code class="language-plantuml">@startuml
 actor Guest
-  actor User
-  actor Manager
-  
-  usecase Registration
-  usecase "Activate(reactivate) Profile" as AP
-  usecase Login
-  
-  usecase "Profile \nManagement" as PM
-  usecase "Create \nEntry Point" as CEP
-  usecase "Entry Point \nManagement" as EPM
-  usecase "Restore \nPassword" as RP
-  
-  
-  User -u-|&gt; Guest
-  Manager -u-|&gt; User
-  
-  Guest -&gt; Registration
-  
-  User -u-&gt; Login
-  User -l-&gt; PM
-  User -&gt; CEP
-  User --&gt; AP
-  User --&gt; RP
-  
-  Manager -&gt; EPM
+actor User
+actor Manager
+
+usecase Registration
+usecase "Activate(reactivate) Profile" as AP
+usecase Login
+
+usecase "Profile \nManagement" as PM
+usecase "Create \nEntry Point" as CEP
+usecase "Entry Point \nManagement" as EPM
+usecase "Restore \nPassword" as RP
+
+User -u-|&gt; Guest
+Manager -u-|&gt; User
+
+Guest -&gt; Registration
+
+User -u-&gt; Login
+User -l-&gt; PM
+User -&gt; CEP
+User --&gt; AP
+User --&gt; RP
+
+Manager -&gt; EPM
 @enduml
 </code></pre>
-<p><strong>Діаграма прецедентів</strong></p>
-</center>
 
                     </main>
 
