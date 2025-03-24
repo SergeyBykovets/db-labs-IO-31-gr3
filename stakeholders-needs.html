@@ -169,20 +169,78 @@
 <p><em>[Розділ містить опис того, про що йдеться в еій частині цього документу, що залишилася.
 Також тут описана структура документу.]</em></p>
 <h2 id="Характеристика-ділових-процесів"><a class="header" href="#Характеристика-ділових-процесів">Характеристика ділових процесів</a></h2>
-<p><em>[В цьому розділі визначаються зовнішні фактори, що впливають на бізнес (бізнес-актори),
-та внутрішні фактори (робітники), дається загальна характеристика діяльності бізнес-акторів
-та робітників, яка здійснюється за допомогою бізнесу.</em></p>
-<p><em>Дається опис бізнес-сценаріїв взаємодії бізнес-акторів, робітників і, можливо, інформаційної системи за допомогою наступної
-специфікації:</em></p>
-<p><em><strong>ID:</strong></em></p>
-<p><em><strong>НАЗВА:</strong></em></p>
-<p><em><strong>УЧАСНИКИ:</strong></em></p>
-<p><em><strong>ПЕРЕДУМОВИ:</strong></em></p>
-<p><em><strong>РЕЗУЛЬТАТ:</strong></em></p>
-<p><em><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></em></p>
-<p><em><strong>ОСНОВНИЙ СЦЕНАРІЙ:</strong></em></p>
-<p><em>Кількість сценаріїв визначається у відповідності до специфіки завдання та необхідного
-рівня деталізації (зазвичай, 5-6 сценаріїв).</em></p>
+<p><strong>Деталізація операційних сценаріїв:</strong></p>
+<hr />
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left"><strong>ID:</strong></th><th style="text-align: left">UserRegistration</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>НАЗВА:</strong></td><td style="text-align: left">Створення нового облікового запису</td></tr>
+<tr><td style="text-align: left"><strong>УЧАСНИКИ:</strong></td><td style="text-align: left">Користувач, система</td></tr>
+<tr><td style="text-align: left"><strong>ПЕРЕДУМОВИ:</strong></td><td style="text-align: left">Користувач не має облікового запису у системі</td></tr>
+<tr><td style="text-align: left"><strong>РЕЗУЛЬТАТ:</strong></td><td style="text-align: left">Новий обліковий запис користувача</td></tr>
+<tr><td style="text-align: left"><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></td><td style="text-align: left">1. Користувач уже зареєстрований у системі - ExistingAccountError <br/> 2. Користувач не ввів необхідні дані - MissingInformationError <br/> 3. Користувач ввів некоректні дані - InvalidInputError</td></tr>
+<tr><td style="text-align: left"><strong>ОСНОВНИЙ СЦЕНАРІЙ:</strong></td><td style="text-align: left">1. Користувач відкриває сторінку для створення облікового запису <br/> 2. Система виводить необхідні поля <br/> 3. Користувач вводить персональні дані (Електронна пошта та пароль) <br/> 4. Користувач натискає кнопку "Зареєструватися" <br/> 5. Система перевіряє введенні дані <br/> 6. Система створює новий обліковий запис на основі введених даних <br/> 7. Система інформує користувача про успішне створення нового облікового запису</td></tr>
+</tbody></table>
+</div>
+<hr />
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left"><strong>ID:</strong></th><th style="text-align: left">UserLogin</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>НАЗВА:</strong></td><td style="text-align: left">Вхід до облікового запису</td></tr>
+<tr><td style="text-align: left"><strong>УЧАСНИКИ:</strong></td><td style="text-align: left">Користувач, система</td></tr>
+<tr><td style="text-align: left"><strong>ПЕРЕДУМОВИ:</strong></td><td style="text-align: left">Користувач має обліковий запис у системі</td></tr>
+<tr><td style="text-align: left"><strong>РЕЗУЛЬТАТ:</strong></td><td style="text-align: left">Вхід у обліковий запис</td></tr>
+<tr><td style="text-align: left"><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></td><td style="text-align: left">1. Користувач ввів не правильні дані - InfoNotFoundError <br/> 2. Користувач не має облікового запису - NoAccountError <br/> 3. Користувач зробив забагато спроб входу - AccessLimitError</td></tr>
+<tr><td style="text-align: left"><strong>ОСНОВНИЙ СЦЕНАРІЙ:</strong></td><td style="text-align: left">1. Користувач відкриває сторінку для авторизації <br/> 2. Система виводить необхідні поля  <br/> 3. Користувач вводить персональні дані (Електронна пошта та пароль) <br/> 4. Користувач натискає кнопку "Увійти" <br/> 5. Система перевіряє введенні дані <br/> 6. Система авторизує користувача <br/> 7. Система інформує про успішну авторизацію та перенаправляє користувача на сторінку облікового запису</td></tr>
+</tbody></table>
+</div>
+<hr />
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left"><strong>ID:</strong></th><th style="text-align: left">UserLogout</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>НАЗВА:</strong></td><td style="text-align: left">Вихід з облікового запису</td></tr>
+<tr><td style="text-align: left"><strong>УЧАСНИКИ:</strong></td><td style="text-align: left">Користувач, система</td></tr>
+<tr><td style="text-align: left"><strong>ПЕРЕДУМОВИ:</strong></td><td style="text-align: left">Користувач має обліковий запис та авторизований у нього</td></tr>
+<tr><td style="text-align: left"><strong>РЕЗУЛЬТАТ:</strong></td><td style="text-align: left">Вихід із облікового запису</td></tr>
+<tr><td style="text-align: left"><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></td><td style="text-align: left">Користувач не авторизований у обліковий запис - NoInError</td></tr>
+<tr><td style="text-align: left"><strong>ОСНОВНИЙ СЦЕНАРІЙ:</strong></td><td style="text-align: left">1. Користувач відкриває сторінку облікового запису <br/> 2. Система виводить інформацію облікового запису та інстументи для роботи з ним <br/> 3. Користувач натискає кнопку "Вийти" <br/> 4. Система завершує поточну сесію <br/> 5. Система інформує користувача про успішний вихід з облікового запису та перенаправляє його на головну сторінку</td></tr>
+</tbody></table>
+</div>
+<hr />
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left"><strong>ID:</strong></th><th style="text-align: left">UserRemove</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>НАЗВА:</strong></td><td style="text-align: left">Видалення облікового запису</td></tr>
+<tr><td style="text-align: left"><strong>УЧАСНИКИ:</strong></td><td style="text-align: left">Користувач, система</td></tr>
+<tr><td style="text-align: left"><strong>ПЕРЕДУМОВИ:</strong></td><td style="text-align: left">Користувач має обліковий запис та авторизований у нього</td></tr>
+<tr><td style="text-align: left"><strong>РЕЗУЛЬТАТ:</strong></td><td style="text-align: left">Обліковий запис видалено</td></tr>
+<tr><td style="text-align: left"><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></td><td style="text-align: left">Користувач не має облікового запису - NoAccountError</td></tr>
+<tr><td style="text-align: left"><strong>ОСНОВНИЙ СЦЕНАРІЙ:</strong></td><td style="text-align: left">1. Користувач відкриває сторінку облікового запису <br/> 2. Система виводить інформацію облікового запису та інстументи для роботи з ним <br/> 3. Користувач натискає кнопку "Видалити обліковий запис" <br/> 4. Система видаляє обліковий запис та інформацію про нього <br/> 5. Система інформує користувача про успішне видалення та перенаправляє його на головну сторінку</td></tr>
+</tbody></table>
+</div>
+<hr />
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left"><strong>ID:</strong></th><th style="text-align: left">UserCreateRequest</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>НАЗВА:</strong></td><td style="text-align: left">Створення запиту для аналізу медіа-контенту</td></tr>
+<tr><td style="text-align: left"><strong>УЧАСНИКИ:</strong></td><td style="text-align: left">Користувач, система</td></tr>
+<tr><td style="text-align: left"><strong>ПЕРЕДУМОВИ:</strong></td><td style="text-align: left">Користувач має обліковий запис та авторизований у нього</td></tr>
+<tr><td style="text-align: left"><strong>РЕЗУЛЬТАТ:</strong></td><td style="text-align: left">Запит створено</td></tr>
+<tr><td style="text-align: left"><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></td><td style="text-align: left">1. Користувач не авторизований у обліковий запис - NoInError <br/> 2. Користувач ввів не правильні дані - InfoNotFoundError</td></tr>
+<tr><td style="text-align: left"><strong>ОСНОВНИЙ СЦЕНАРІЙ:</strong></td><td style="text-align: left">1. Користувач натискає кнопку "Створити запит" <br/> 2. Система виводить необхідні поля <br/> 3. Користувач вводить дані про запит <br/> 4. Користувач натискає кнопку "Створити" <br/> 5. Система перевіряє введенні дані<br/> 6. Система створює запит<br/> 7. Система інформує користувача про успішне створення запиту та перенаправляє його на головну сторінку</td></tr>
+</tbody></table>
+</div>
+<hr />
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left"><strong>ID:</strong></th><th style="text-align: left">UserLevelUpdate</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>НАЗВА:</strong></td><td style="text-align: left">Заміна прав користувача на права адміністратора</td></tr>
+<tr><td style="text-align: left"><strong>УЧАСНИКИ:</strong></td><td style="text-align: left">Адміністратор, користувач, система</td></tr>
+<tr><td style="text-align: left"><strong>ПЕРЕДУМОВИ:</strong></td><td style="text-align: left">Користувач має обліковий запис</td></tr>
+<tr><td style="text-align: left"><strong>РЕЗУЛЬТАТ:</strong></td><td style="text-align: left">Система змінює користувачу права на адміністраторські</td></tr>
+<tr><td style="text-align: left"><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></td><td style="text-align: left">1. Користувач вже має права адміністратора - RoleError <br/>  2. Користувач не має облікового запису - NoAccountError</td></tr>
+<tr><td style="text-align: left"><strong>ОСНОВНИЙ СЦЕНАРІЙ:</strong></td><td style="text-align: left">1. Адміністратор обирає користувача та відкриває сторінку з інструментами для роботи з ним <br/> 2. Система виводить інформацію про користувача та інстументи для роботи з ним <br/> 3. Адміністратор натискає кнопку "Надати права адміністратора" <br/> 4. Система перевіряє права та обліковий запис користувача <br/> 5. Система змінює права <br/> 6. Система інформує адміністратора та користувача про успішну зміну прав</td></tr>
+</tbody></table>
+</div>
+<hr />
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left"><strong>ID:</strong></th><th style="text-align: left">AdminUserRemove</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>НАЗВА:</strong></td><td style="text-align: left">Видалення облікового запису</td></tr>
+<tr><td style="text-align: left"><strong>УЧАСНИКИ:</strong></td><td style="text-align: left">Адміністратор, користувач, система</td></tr>
+<tr><td style="text-align: left"><strong>ПЕРЕДУМОВИ:</strong></td><td style="text-align: left">Користувач має обліковий запис</td></tr>
+<tr><td style="text-align: left"><strong>РЕЗУЛЬТАТ:</strong></td><td style="text-align: left">Обліковий запис видалено</td></tr>
+<tr><td style="text-align: left"><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></td><td style="text-align: left">Користувач не має облікового запису - NoAccountError</td></tr>
+<tr><td style="text-align: left"><strong>ОСНОВНИЙ СЦЕНАРІЙ:</strong></td><td style="text-align: left">1. Адміністратор обирає користувача та відкриває сторінку з інструментами для роботи з ним <br/> 2. Система виводить інформацію облікового запису та інстументи для роботи з ним <br/> 3. Адміністратор натискає кнопку "Видалити обліковий запис" <br/> 4. Система видаляє обліковий запис та інформацію про нього <br/> 5. Система інформує адміністратора про успішне видалення та перенаправляє його на головну сторінку</td></tr>
+</tbody></table>
+</div>
+<hr />
 <h2 id="Короткий-огляд-продукту"><a class="header" href="#Короткий-огляд-продукту">Короткий огляд продукту</a></h2>
 <p><strong>Система аналізу медіа-контенту</strong> – це інструмент для автоматизованого збору, обробки та аналізу різноманітних типів медійного вмісту, включаючи тексти, зображення, відео та аудіо, з різних джерел і платформ. Вона дозволяє ефективно опрацьовувати великі обсяги даних, надаючи користувачам можливість глибше розуміти інформаційне середовище, оцінювати його вплив на суспільство, а також виявляти ключові тренди та важливі події у медіа-просторі. Завдяки використанню сучасних алгоритмів аналізу, ця система допомагає швидко знаходити закономірності, визначати маніпулятивний контент та прогнозувати інформаційні тенденції.</p>
 <p><em><strong>Система є корисною для таких типів користувачів:</strong></em></p>
