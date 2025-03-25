@@ -155,12 +155,13 @@
                         <h1 id="Розроблення-функціональних-вимог-до-системи"><a class="header" href="#Розроблення-функціональних-вимог-до-системи">Розроблення функціональних вимог до системи</a></h1>
 <h2 id="Модель-прецедентів"><a class="header" href="#Модель-прецедентів">Модель прецедентів</a></h2>
 <pre><code class="language-plantuml">@startuml
-actor Admin 
+actor Admin
 control System
-Admin -&gt; System: Select user to delete 
-Admin -&gt; System: Click "Delete User" 
-System -&gt; System: Check permissions (InsufficientPermissionsException) 
-System -&gt; System: Delete user 
+Admin -&gt; System: Select user to delete
+Admin -&gt; System: Click "Delete User"
+System -&gt; System: Check permissions (InsufficientPermissionsException)
+System -&gt; System: Delete user
+System -&gt; Admin: User deleted
 @enduml
 </code></pre>
 
