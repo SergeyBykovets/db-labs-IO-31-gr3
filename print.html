@@ -516,16 +516,16 @@ AI підказки та бот для підтримки , авто реком�
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="Розроблення-функціональних-вимог-до-системи"><a class="header" href="#Розроблення-функціональних-вимог-до-системи">Розроблення функціональних вимог до системи</a></h1>
 <h2 id="Модель-прецедентів"><a class="header" href="#Модель-прецедентів">Модель прецедентів</a></h2>
-<p>@startuml
-actor Admin
+<pre><code class="language-plantuml">@startuml
+actor Admin 
 control System
-Admin -&gt; System: Select user to delete
-Admin -&gt; System: Click "Delete User"
-System -&gt; System: Check permissions (InsufficientPermissionsException)
-System -&gt; System: Delete user
-System -&gt; Admin: User deleted</p>
-<p>@enduml</p>
-</center>
+Admin -&gt; System: Select user to delete 
+Admin -&gt; System: Click "Delete User" 
+System -&gt; System: Check permissions (InsufficientPermissionsException) 
+System -&gt; System: Delete user 
+System -&gt; Admin: User deleted
+@enduml
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="Проєктування-бази-даних"><a class="header" href="#Проєктування-бази-даних">Проєктування бази даних</a></h1>
 <p>В рамках проекту розробляється:</p>
 <ul>
